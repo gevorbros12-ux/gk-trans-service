@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARGO EXPRESS — Պրոֆեսիոնալ Բեռնափոխադրումներ Հայաստանում</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Notification Bar -->
+    <div class="top-announcement">
+        <div class="container announcement-content">
+            <div class="announcement-left">
+                <span class="status-dot"></span>
+                <span id="txt-announcement">Ավտոպարկը պատրաստ է աշխատանքի: Երևանում մոտեցումը՝ 20-30 րոպե:</span>
+            </div>
+            <div class="announcement-right">
+                <span>📍 Երևան, Հայաստան</span>
+                <span class="sep">|</span>
+                <span>⏱ 24/7 Անխափան ծառայություն</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo-box">
+                <div class="logo-badge">PRO</div>
+                <div class="logo-text-group">
+                    <span class="logo-title">G&K<span class="logo-accent">TRANS SERVICE</span></span>
+                    <span class="logo-sub">HEAVY LOGISTICS NETWORK</span>
+                </div>
+            </a>
+
+            <nav class="main-nav">
+                <a href="#calc-section" class="nav-link" id="nav-calc">Կալկուլյատոր</a>
+                <a href="#fleet-section" class="nav-link" id="nav-fleet">Ավտոպարկ</a>
+                <a href="#routes-section" class="nav-link" id="nav-routes">Ուղղություններ</a>
+                <a href="#advantages-section" class="nav-link" id="nav-adv">Առավելություններ</a>
+                <a href="#faq-section" class="nav-link" id="nav-faq">FAQ</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-switch">
+                    <button id="btn-hy" class="lang-btn active" onclick="setLanguage('hy')">AM</button>
+                    <button id="btn-ru" class="lang-btn" onclick="setLanguage('ru')">RU</button>
+                </div>
+                <a href="tel:+37499000000" class="phone-button">
+                    <span class="phone-icon">📞</span>
+                    <span class="phone-text">+374 55 032255</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-layout">
+            <div class="hero-content">
+                <div class="hero-tag-box">
+                    <span class="hero-tag-text" id="txt-hero-tag">🔥 №1 Ծանրաքաշ Բեռնափոխադրումներ</span>
+                </div>
+                <h1 class="hero-main-title" id="txt-hero-title">
+                    Ծանրաքաշ և ծավալուն <br>
+                    <span class="title-highlight">բեռների արագ փոխադրում</span>
+                </h1>
+                <p class="hero-description" id="txt-hero-sub">
+                    Պրոֆեսիոնալ բեռնափոխադրումներ սեփական ավտոպարկով: 6.2 մետրանոց ԳԱԶել Next (28 մ³, 3.5 տ) և 7.5 մետրանոց Iveco Eurocargo (44 մ³, հիդրոլիֆտով) Երևանում և ամբողջ Հայաստանում:
+                </p>
+
+                <div class="hero-specs-pills">
+                    <div class="spec-pill">
+                        <span class="pill-icon">⚡</span>
+                        <div class="pill-info">
+                            <strong id="txt-pill1-t">Արագ մոտեցում</strong>
+                            <span id="txt-pill1-s">20-30 րոպե Երևանում</span>
+                        </div>
+                    </div>
+                    <div class="spec-pill">
+                        <span class="pill-icon">🛡️</span>
+                        <div class="pill-info">
+                            <strong id="txt-pill2-t">100% Ապահովություն</strong>
+                            <span id="txt-pill2-s">Ամրագոտիներ և տենտ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heavy Duty Calculator Card -->
+            <div class="calc-widget" id="calc-section">
+                <div class="widget-header">
+                    <div>
+                        <h3 id="txt-calc-title">Արժեքի հաշվիչ</h3>
+                        <p class="widget-subtitle" id="txt-calc-sub">Ճշգրիտ հաշվարկ 5 վայրկյանում</p>
+                    </div>
+                    <span class="widget-badge">LIVE TARIFF</span>
+                </div>
+
+                <!-- Truck Selector -->
+                <div class="widget-step">
+                    <label class="step-label" id="txt-step1">1. Ընտրեք մեքենան:</label>
+                    <div class="truck-grid-select">
+                        <label class="truck-radio-card">
+                            <input type="radio" name="truck" value="ГАЗель (28m³)" checked onchange="calculate()">
+                            <div class="truck-radio-content">
+                                <div class="truck-radio-header">
+                                    <span class="truck-radio-title">ԳԱԶել Next</span>
+                                    <span class="truck-length-tag">28 Մ³ / 600֏</span>
+                                </div>
+                                <span class="truck-radio-desc" id="txt-gazelle-desc">3-կողմանի բարձում (28 մ³)</span>
+                                <span class="truck-radio-weight" id="txt-gazelle-w">Մինչև 3.5 տոննա</span>
+                            </div>
+                        </label>
+
+                        <label class="truck-radio-card">
+                            <input type="radio" name="truck" value="Iveco Eurocargo (44m³)" onchange="calculate()">
+                            <div class="truck-radio-content">
+                                <div class="truck-radio-header">
+                                    <span class="truck-radio-title">Iveco Eurocargo</span>
+                                    <span class="truck-length-tag iveco-tag">44 Մ³ / 800֏</span>
+                                </div>
+                                <span class="truck-radio-desc" id="txt-iveco-desc">Հիդրոլիֆտով (44 մ³)</span>
+                                <span class="truck-radio-weight" id="txt-iveco-w">Մինչև 7.5 տոննա</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Distance Slider -->
+                <div class="widget-step">
+                    <div class="step-header-flex">
+                        <label class="step-label" id="txt-step2">2. Փոխադրման հեռավորությունը:</label>
+                        <span class="dist-output"><strong id="dist-val">10</strong> կմ</span>
+                    </div>
+                    <input type="range" id="distance" min="1" max="300" value="10" oninput="calculate()" class="range-slider">
+                    <div class="slider-labels">
+                        <span id="txt-range-min">1 կմ (Երևան)</span>
+                        <span>150 կմ</span>
+                        <span id="txt-range-max">300 կմ (Մարզեր)</span>
+                    </div>
+                </div>
+
+                <!-- Calculation Result -->
+                <div class="widget-result-box">
+                    <div class="price-display">
+                        <span class="price-title-text" id="txt-price-label">Մոտավոր արժեքը:</span>
+                        <div class="price-number"><span id="total-price">6,000</span> <span class="currency-sign">֏</span></div>
+                    </div>
+                    <button class="action-btn-primary" onclick="openWhatsApp(event)">
+                        <span id="txt-btn-wa">Պատվիրել WhatsApp-ով</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Fleet Details Section -->
+    <section class="section-fleet" id="fleet-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-sub-tag">FLEET CAPABILITIES</span>
+                <h2 id="txt-fleet-heading">Մեր ավտոպարկի տեխնիկական հնարավորությունները</h2>
+                <p id="txt-fleet-heading-sub">Յուրաքանչյուր մեքենա նախատեսված է հատուկ տեսակի բեռների համար</p>
+            </div>
+
+            <div class="fleet-cards-grid">
+                <!-- GAZelle Next Card -->
+                <div class="fleet-item-card">
+                    <div class="card-banner gazelle-bg">
+                        <div class="banner-top">
+                            <span class="v-tag">3-ԿՈՂՄԱՆԻ ԲԱՐՁՈՒՄ</span>
+                            <span class="v-status">🟢 Ազատ է</span>
+                        </div>
+                        <h3 class="v-title">ԳԱԶել Next Ultra Long</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="v-description" id="txt-fleet-gazelle-p">
+                            Հատուկ երկարացված թափք (6.2մ) 28 մ³ ծավալով: Տենտը հավաքվում է, ինչը թույլ է տալիս բեռնում կատարել վերևից (կրանով), կողքից կամ հետևից: Իդեալական է տախտակների, խողովակների և պրոֆիլների համար:
+                        </p>
+
+                        <div class="specs-table">
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-len">Թափքի երկարություն:</span>
+                                <span class="spec-val">6.20 մետր</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-cap">Բեռնատարողություն:</span>
+                                <span class="spec-val">3,500 կգ (3.5 տ)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-vol">Ծավալ:</span>
+                                <span class="spec-val highlight-val">28 մ³</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-load">Սակագին:</span>
+                                <span class="spec-val highlight-val">600 ֏ / կմ</span>
+                            </div>
+                        </div>
+
+                        <button class="card-action-btn" onclick="selectTruckAndScroll('ГАЗель (28m³)')" id="txt-btn-select-g">Ընտրել այս մեքենան</button>
+                    </div>
+                </div>
+
+                <!-- Iveco Eurocargo Card -->
+                <div class="fleet-item-card">
+                    <div class="card-banner iveco-bg">
+                        <div class="banner-top">
+                            <span class="v-tag iveco-tag-bg">ՀԻԴՐՈԼԻՖՏՈՎ (ԼԻՖՏՈՎ)</span>
+                            <span class="v-status">🟢 Ազատ է</span>
+                        </div>
+                        <h3 class="v-title">Iveco Eurocargo Heavy Duty</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="v-description" id="txt-fleet-iveco-p">
+                            Ծանրաքաշ կոմերցիոն բեռների համար (44 մ³): Հագեցած է հիդրոլիֆտով (гидролифт), ինչը հնարավորություն է տալիս բարձրացնել ծանր պալետները և սարքավորումները առանց լրացուցիչ բանվորների:
+                        </p>
+
+                        <div class="specs-table">
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-len2">Թափքի երկարություն:</span>
+                                <span class="spec-val">7.50 մետր</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-cap2">Բեռնատարողություն:</span>
+                                <span class="spec-val">մինչև 7,500 կգ</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-vol2">Ծավալ:</span>
+                                <span class="spec-val highlight-val">44 մ³</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key" id="txt-spec-load2">Սակագին:</span>
+                                <span class="spec-val highlight-val">800 ֏ / կմ</span>
+                            </div>
+                        </div>
+
+                        <button class="card-action-btn" onclick="selectTruckAndScroll('Iveco Eurocargo (44m³)')" id="txt-btn-select-i">Ընտրել այս մեքենան</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Price Table -->
+    <section class="section-routes" id="routes-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-sub-tag">FIXED TARIFFS</span>
+                <h2 id="txt-routes-heading">Հանրաճանաչ ուղղություններ և սակագներ</h2>
+                <p id="txt-routes-sub">Ճշգրիտ հաշվարկված արժեքներ ըստ կիլոմետրերի</p>
+            </div>
+
+            <div class="routes-table-wrapper">
+                <table class="routes-table">
+                    <thead>
+                        <tr>
+                            <th id="th-route">Ուղղություն (Երևանից)</th>
+                            <th id="th-dist">Հեռավորություն</th>
+                            <th id="th-gazelle">ԳԱԶել Next (28m³ / 600֏)</th>
+                            <th id="th-iveco">Iveco (44m³ / 800֏)</th>
+                            <th id="th-action">Գործողություն</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Երևան ➔ Գյումրի</strong></td>
+                            <td>120 կմ</td>
+                            <td>72,000 ֏</td>
+                            <td>96,000 ֏</td>
+                            <td><button class="table-btn" onclick="setQuickRoute(120)">Ընտրել</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Երևան ➔ Վանաձոր</strong></td>
+                            <td>130 կմ</td>
+                            <td>78,000 ֏</td>
+                            <td>104,000 ֏</td>
+                            <td><button class="table-btn" onclick="setQuickRoute(130)">Ընտրել</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Երևան ➔ Սևան / Դիլիջան</strong></td>
+                            <td>100 կմ</td>
+                            <td>60,000 ֏</td>
+                            <td>80,000 ֏</td>
+                            <td><button class="table-btn" onclick="setQuickRoute(100)">Ընտրել</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Երևան ➔ Գորիս</strong></td>
+                            <td>240 կմ</td>
+                            <td>144,000 ֏</td>
+                            <td>192,000 ֏</td>
+                            <td><button class="table-btn" onclick="setQuickRoute(240)">Ընտրել</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Երևան ➔ Կապան</strong></td>
+                            <td>300 կմ</td>
+                            <td>180,000 ֏</td>
+                            <td>240,000 ֏</td>
+                            <td><button class="table-btn" onclick="setQuickRoute(300)">Ընտրել</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Advantages -->
+    <section class="section-advantages" id="advantages-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-sub-tag">WHY US</span>
+                <h2 id="txt-adv-heading">Ինչու՞ ընտրել մեր ծառայությունը</h2>
+            </div>
+
+            <div class="adv-grid">
+                <div class="adv-card">
+                    <div class="adv-icon">📐</div>
+                    <h3 id="txt-adv1-t">Մեծ ծավալի թափքեր (28m³ և 44m³)</h3>
+                    <p id="txt-adv1-p">Ստանդարտ 3-4 մետրանոց մեքենաներում 6 մետրանոց ապրանքները չեն տեղավորվում: Մեր մեքենաները հատուկ նախատեսված են երկար և ծավալուն բեռների համար:</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon">🏗️</div>
+                    <h3 id="txt-adv2-t">Հիդրոլիֆտ և 3-կողմանի բարձում</h3>
+                    <p id="txt-adv2-p">ԳԱԶելը բացվում է վերևից և կողքերից, իսկ Iveco-ն ունի հիդրոլիֆտ: Սա խնայում է Ձեր ժամանակը և բանվորների ծախսը:</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon">🤝</div>
+                    <h3 id="txt-adv3-t">Անմիջական աշխատանք</h3>
+                    <p id="txt-adv3-p">Դուք աշխատում եք անմիջապես մեքենայի տիրոջ հետ՝ առանց միջնորդների և լրացուցիչ հավելավճարների:</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-faq" id="faq-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-sub-tag">QUESTIONS & ANSWERS</span>
+                <h2 id="txt-faq-heading">Հաճախ տրվող հարցեր</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span id="txt-faq1-q">Ինչպե՞ս է հաշվարկվում փոխադրման արժեքը:</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p id="txt-faq1-a">Արժեքը ձևավորվում է ըստ կիլոմետրերի (ԳԱԶել՝ 600 ֏/կմ, Iveco՝ 800 ֏/կմ): Կալկուլյատորում նշված արժեքը վերջնական է:</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span id="txt-faq2-q">Կարո՞ղ ենք պատվիրել վերևից բարձում (կրանով):</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p id="txt-faq2-a">Այո! ԳԱԶել Next-ի տենտը ամբողջությամբ հավաքվում է, ինչը թույլ է տալիս բեռնումը կատարել վերևից՝ ավտոկրանով կամ մանիպուլյատորով:</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span id="txt-faq3-q">Ի՞նչ առավելություն ունի Iveco-ի հիդրոլիֆտը:</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p id="txt-faq3-a">Հիդրոլիֆտը թույլ է տալիս ծանր ապրանքները (մինչև 1.5 տոննա մեկ բարձրացումով) գետնից հեշտությամբ բարձրացնել 44մ³ թափքի մակարդակ:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#" class="logo-box">
+                    <div class="logo-badge">PRO</div>
+                    <div class="logo-text-group">
+                        <span class="logo-title" style="color:#fff;">G&K<span class="logo-accent">TRANS SERVICE</span></span>
+                    </div>
+                </a>
+                <p class="footer-desc" id="txt-footer-desc">
+                    Պրոֆեսիոնալ ծանրաքաշ բեռնափոխադրումներ ԳԱԶել Next (28m³, 3.5տ) և Iveco Eurocargo (44m³, 7.5մ) մեքենաներով Երևանում և Հայաստանի մարզերում:
+                </p>
+            </div>
+            <div class="footer-right">
+                <h4 id="txt-footer-contacts">Կոնտակտներ</h4>
+                <p>📞 Phone / WhatsApp: +374 55 032255</p>
+                <p>📍 Yerevan, Armenia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 CARGO EXPRESS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
